@@ -24,5 +24,31 @@ namespace Calculadora_Tabajara
             Resultado = NumeroA + NumeroB;
             TipoOperacao = '+';
         }
+        public void Subtracao()
+        {
+            Resultado = NumeroA - NumeroB;
+            TipoOperacao = '-';
+        }
+
+        public void Multiplicacao()
+        {
+            Resultado = NumeroA * NumeroB;
+            TipoOperacao = '*';
+        }
+
+        public void Divisao()
+        {
+            if (NumeroB == 0)
+            {
+                throw new DivideByZeroException();
+
+                Resultado = NumeroA / NumeroB;
+                TipoOperacao = '/';
+            }
+        }
+        public string AtributosToString()
+        {
+            return $"`{this.NumeroA} {this.TipoOperacao} {this.NumeroB} = {this.Resultado}";
+        }
     }
 }

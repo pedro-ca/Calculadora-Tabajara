@@ -20,5 +20,10 @@ namespace Calculadora_Tabajara
             TipoOperacao = tipoOperacao;
             Resultado = resultado;
         }
+        public void Subtracao()
+        {
+            Resultado = NumeroA - NumeroB;
+            TipoOperacao = '-';
+        }
     }
 }

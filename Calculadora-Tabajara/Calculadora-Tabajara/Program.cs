@@ -16,13 +16,26 @@ namespace Calculadora_Tabajara
             {
                 Console.Clear();
                 Console.WriteLine("Digite a Opção desejada: ");
-                Console.WriteLine("1 - Adição ");
-                string inputUsuario = Console.ReadLine();
+                Console.WriteLine("+ = Adição ");
+                string inputOperacao = Console.ReadLine();
 
-                switch (inputUsuario)
+                Console.WriteLine("Digite o primeiro numero: ");
+                if (!int.TryParse(Console.ReadLine(), out int inputNumeroA)) {
+                    Console.WriteLine("O primeiro número deve ser um inteiro valido. Tente novamente.");
+                    continue;
+                }
+
+                Console.WriteLine("Digite o segundo numero: ");
+                if (!int.TryParse(Console.ReadLine(), out int inputNumeroB))
                 {
-                    case "1":
-                        operacao = new Operacao(3, 4);
+                    Console.WriteLine("O primeiro número deve ser um inteiro valido. Tente novamente.");
+                    continue;
+                }
+
+                switch (inputOperacao)
+                {
+                    case "+":
+                        operacao = new Operacao(inputNumeroA, inputNumeroB);
                         operacao.Adicao();
                         break;
 

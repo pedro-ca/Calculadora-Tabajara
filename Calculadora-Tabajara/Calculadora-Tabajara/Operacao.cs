@@ -6,19 +6,23 @@ using System.Threading.Tasks;
 
 namespace Calculadora_Tabajara
 {
-    class Operacoes
+    class Operacao
     {
         public double NumeroA;
         public double NumeroB;
         public char TipoOperacao;
         public double Resultado;
 
-        public Operacoes(double numeroA, double numeroB, char tipoOperacao, double resultado)
+        public Operacao(double numeroA, double numeroB)
         {
             NumeroA = numeroA;
             NumeroB = numeroB;
-            TipoOperacao = tipoOperacao;
-            Resultado = resultado;
+        }
+
+        public void Adicao()
+        {
+            Resultado = NumeroA + NumeroB;
+            TipoOperacao = '+';
         }
     }
 }
